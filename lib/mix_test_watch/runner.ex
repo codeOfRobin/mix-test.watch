@@ -29,7 +29,7 @@ defmodule MixTestWatch.Runner do
   #
 
   defp maybe_clear_terminal(%{clear: false}), do: :ok
-  defp maybe_clear_terminal(%{clear: true}), do: :ok = IO.puts(IO.ANSI.clear() <> IO.ANSI.home())
+  defp maybe_clear_terminal(%{clear: true}), do: :ok = IO.puts("\x1bc")
 
   defp maybe_print_timestamp(%{timestamp: false}), do: :ok
 
